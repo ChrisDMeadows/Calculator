@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#feead2), to(#fff8ee));
+  background: linear-gradient(180deg, #defed2, #eeffee);
+  font-family: Open Sans;
+  font-size: 16px;
+}
+body:before {
+  content: '';
+  width: 800px;
+  height: 600px;
+  background: #f00;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+}
+
+/*--------------------
+Calculator
+--------------------*/
+.calculator {
+  width: 300px;
+  background: linear-gradient(135deg, #41fc3b, #59f22a);
+  box-shadow: 0 10px 28px #72d84a;
+  margin: 30px auto;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -62%);
+          transform: translate(-50%, -62%);
+}
+
+.display {
+  background: #fff;
+  padding: 15px 28px;
+  height: 69px;
+  text-align: right;
+  font-size: 29px;
+  color: #4c455a;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 2px 3px #66d84a;
+  -webkit-transition: color .6s ease-in-out;
+  transition: color .6s ease-in-out;
+}
+.display::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/*--------------------
+Buttons
+--------------------*/
+.buttons button {
+  float: right;
+  border: none;
+  background: transparent;
+  color: rgb(44, 41, 41);
+  padding: 15px 10px;
+  outline: none;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  focus: none !important;
+}
+.buttons button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.buttons button:active, .buttons button.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+}
+.buttons::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.buttons .numbers {
+  float: left;
+  width: 75%;
+  padding: 10px;
+}
+.buttons .numbers button {
+  width: 33.3333%;
+  padding: 18px 10px;
+}
+.buttons .operators {
+  float: right;
+  width: 25%;
+  padding: 16px 10px 10px;
+  background: rgba(0, 0, 0, 0.1);
+  min-height: 260px;
+}
+.buttons .operators button {
+  width: 100%;
+  padding: 11px 10px;
+}
+.buttons .operators button[id="x"] {
+  font-size: 13px;
+}
+.buttons .operators button[id="-"] {
+  font-size: 18px;
+}
+.buttons .operators button[id="="] {
+  font-size: 16px;
+}
+
+.raw-display {
+    color: white;
+    font-size: .90rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    justify-content: center;
+    text-align: center;
+}
+
